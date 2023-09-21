@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
 	],
 	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
+		icon: "/favicons/favicon.ico",
+		shortcut: "/favicons/favicon-16x16.png",
+		apple: "/favicons/apple-touch-icon.png",
 	},
 };
 
@@ -48,11 +48,11 @@ export default function RootLayout({
 							<Link
 								isExternal
 								className="flex items-center gap-1 text-current"
-								href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-								title="nextui.org homepage"
+								href="https://quacksire.dev?rf=obcl"
+								title="Quacksire Homepage"
 							>
-								<span className="text-default-600">Powered by</span>
-								<p className="text-primary">NextUI</p>
+								<span className="text-default-600">Made by</span>
+								<p className="text-primary">Quacksire</p>
 							</Link>
 						</footer>
 					</div>
