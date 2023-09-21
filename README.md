@@ -1,40 +1,16 @@
-# Next.js & NextUI Template
+# oldbartcars.live
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+This is a site to track BART's old legacy trains that are still in service. It is built using Next.js, NextUI, Tailwind CSS, and BART's real-time API.
 
 ## Technologies Used
 
 - [Next.js 13](https://nextjs.org/docs/getting-started)
 - [NextUI v2](https://nextui.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
+- [Tailwind Variants](https://tailwind-variants.org) (NextUI dependency)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
-
-## How to Use
-
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Run the development server
-
-```bash
-npm run dev
-```
-
-## License
-
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+- [Framer Motion](https://www.framer.com/motion/) (NextUI dependency)
+- [next-themes](https://github.com/pacocoursey/next-themes) (NextUI dependency)
+- [BART API](https://api.bart.gov/docs/overview/index.aspx)
+- [Cloudflare Pages](https://pages.cloudflare.com/)
+- [Cloudflare Workers](https://workers.cloudflare.com/)
