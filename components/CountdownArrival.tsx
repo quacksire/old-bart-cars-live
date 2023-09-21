@@ -19,7 +19,7 @@ export default function CountdownArrival({arrivalTime} :{ arrivalTime : Moment})
             // check if hours are negitive and don't change the time if so
             if (String(time).split(':')[0].includes('-') || hours.includes('-')) return null
 
-            setTime(`${hours - 16}:${minutes}:${seconds}`)
+            setTime(`${parseInt(hours) - 16}:${minutes}:${seconds}`)
         }
         timeSet()
 
