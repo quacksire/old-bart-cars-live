@@ -7,12 +7,41 @@ import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 
+let title = "Old Bart Cars Live",
+	description = "Track all legacy BART cars supposedly still in service after their retirement."
+
 export const metadata: Metadata = {
-	title: {
-		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
+	title: title,
+	description:description,
+	openGraph: {
+		title: title,
+		description: description,
+		url: "https://oldbartcars.live",
+		// @ts-ignore
+		type: "website",
+		locale: "en_US",
+		site_name: "Old Bart Cars Live",
 	},
-	description: siteConfig.description,
+	twitter: {
+		card: 'summary',
+		title: title,
+		description: description,
+		siteId: '1467726470533754880',
+		creator: '@duckdoquack',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		nocache: true,
+		googleBot: {
+			index: true,
+			follow: false,
+			noimageindex: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		}
+	},
 	themeColor: [
 		{ media: "(prefers-color-scheme: light)", color: "white" },
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
