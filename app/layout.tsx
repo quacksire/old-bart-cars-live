@@ -121,7 +121,7 @@ export default function RootLayout({
 							{children}
 						</main>
 						{/* I want two links to be one above the other enough but spaced a lil so they don't overlap */}
-						<footer className="absolute bottom-0 w-full flex flex-col justify-center items-center gap-2">
+						<footer className="bottom-0 w-full flex flex-col justify-center items-center gap-2 mt-1 mb-1">
 							<Link
 								href="https://github.com/Quacksire/old-bart-cars-live"
 								target="_blank"
