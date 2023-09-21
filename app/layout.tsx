@@ -29,19 +29,6 @@ export const metadata: Metadata = {
 		siteId: '1467726470533754880',
 		creator: '@duckdoquack',
 	},
-	robots: {
-		index: true,
-		follow: true,
-		nocache: true,
-		googleBot: {
-			index: true,
-			follow: false,
-			noimageindex: true,
-			'max-video-preview': -1,
-			'max-image-preview': 'large',
-			'max-snippet': -1,
-		}
-	},
 	themeColor: [
 		{ media: "(prefers-color-scheme: light)", color: "white" },
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
