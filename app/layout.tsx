@@ -109,18 +109,16 @@ export default function RootLayout({
 							<Link
 								href="https://github.com/Quacksire/old-bart-cars-live"
 								target="_blank"
-								size="mini"
+								size="sm"
 								color="foreground"
-								underline
 							>
 								Source
 							</Link>
 							<Link
 								href="https://quacksire.dev"
-								size="mini"
+								size="sm"
 								color="foreground"
 								target="_blank"
-								underline
 							>
 								Made by Quacksire
 							</Link>
