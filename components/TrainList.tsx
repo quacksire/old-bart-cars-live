@@ -16,7 +16,11 @@ import {Snippet} from "@nextui-org/snippet";
 
 type StopTime = {
     departure: {
-        delay: number;
+        delay?: number;
+        time: string;
+    };
+    arrival: {
+        delay?: number;
         time: string;
     };
     stopId: string;
