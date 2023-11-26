@@ -22,6 +22,10 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		site_name: "Old Bart Cars Live",
 	},
+	viewport: {
+		userScalable: false,
+		initialScale: 1,
+	},
 	twitter: {
 		card: 'summary',
 		title: title,
@@ -116,33 +120,43 @@ export default function RootLayout({
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col h-screen">
-						<Navbar />
+						<Navbar/>
 						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
 							{children}
 						</main>
 						{/* I want two links to be one above the other enough but spaced a lil so they don't overlap */}
-						<footer className="bottom-0 w-full flex flex-col justify-center items-center gap-2 mt-1 mb-1">
+						<footer className="bottom-0 w-screen text-center m-5 text-default-500">
+							{"Made with ❤️ by "}
 							<Link
-								href="https://github.com/Quacksire/old-bart-cars-live"
+								href={"https://quacksire.dev"}
+								className={'text-default-500'}
+								target="_blank"
+							>
+								Quacksire
+							</Link>
+							<br />
+							<Link
+								href="https://github.com/quacksire/old-bart-cars-live"
 								target="_blank"
 								size="sm"
-								color="foreground"
+								className={'m-2 text-default-500'}
+								isExternal
 							>
 								Source
 							</Link>
 							<Link
-								href="https://quacksire.dev"
-								size="sm"
-								color="foreground"
+								isExternal
+								href="https://ko-fi.com/quacksire"
 								target="_blank"
+								size="sm"
+								className={'m-2 text-default-500'}
 							>
-								Made by Quacksire
+								Support
 							</Link>
-
 						</footer>
 					</div>
 				</Providers>
 			</body>
 		</html>
-	);
+);
 }
