@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
-import { Metadata } from "next";
-import { siteConfig } from "@/config/site";
+import {Metadata} from "next";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
@@ -22,10 +21,6 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		site_name: "Old Bart Cars Live",
 	},
-	viewport: {
-		userScalable: false,
-		initialScale: 1,
-	},
 	twitter: {
 		card: 'summary',
 		title: title,
@@ -33,10 +28,6 @@ export const metadata: Metadata = {
 		siteId: '1467726470533754880',
 		creator: '@duckdoquack',
 	},
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
 	icons: {
 		icon: "/favicons/apple-touch-icon.png",
 		shortcut: "/favicons/favicon-16x16.png",
@@ -101,7 +92,19 @@ export const metadata: Metadata = {
 		"veteran tram",
 		"historic ride",
 		"old-world"
-	]
+	],
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "white" },
+		{ media: "(prefers-color-scheme: dark)", color: "black" },
+	],
+	viewport: {
+		width: 'device-width',
+		initialScale: 1,
+		maximumScale: 1,
+		userScalable: false,
+		// Also supported by less commonly used
+		// interactiveWidget: 'resizes-visual',
+	}
 
 };
 
@@ -112,51 +115,52 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body
-				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
-				)}
-			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-					<div className="relative flex flex-col h-screen">
-						<Navbar/>
-						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-							{children}
-						</main>
-						{/* I want two links to be one above the other enough but spaced a lil so they don't overlap */}
-						<footer className="bottom-0 w-screen text-center m-5 text-default-500">
-							{"Made with ❤️ by "}
-							<Link
-								href={"https://quacksire.dev"}
-								className={'text-default-500'}
-								target="_blank"
-							>
-								Quacksire
-							</Link>
-							<br />
-							<Link
-								href="https://github.com/quacksire/old-bart-cars-live"
-								target="_blank"
-								size="sm"
-								className={'m-2 text-default-500'}
-								isExternal
-							>
-								Source
-							</Link>
-							<Link
-								isExternal
-								href="https://ko-fi.com/quacksire"
-								target="_blank"
-								size="sm"
-								className={'m-2 text-default-500'}
-							>
-								Support
-							</Link>
-						</footer>
-					</div>
-				</Providers>
-			</body>
+		<body
+			className={clsx(
+				"min-h-screen bg-background font-sans antialiased",
+				fontSans.variable
+			)}
+		>
+
+		<Providers themeProps={{attribute: "class", defaultTheme: "dark"}}>
+			<div className="relative flex flex-col h-screen">
+				<Navbar/>
+				<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+					{children}
+				</main>
+				{/* I want two links to be one above the other enough but spaced a lil so they don't overlap */}
+				<footer className="bottom-0 w-screen text-center m-5 text-default-500">
+					{"Made with ❤️ by "}
+					<Link
+						href={"https://quacksire.dev"}
+						className={'text-default-500'}
+						target="_blank"
+					>
+						Quacksire
+					</Link>
+					<br/>
+					<Link
+						href="https://github.com/quacksire/old-bart-cars-live"
+						target="_blank"
+						size="sm"
+						className={'m-2 text-default-500'}
+						isExternal
+					>
+						Source
+					</Link>
+					<Link
+						isExternal
+						href="https://ko-fi.com/quacksire"
+						target="_blank"
+						size="sm"
+						className={'m-2 text-default-500'}
+					>
+						Support
+					</Link>
+				</footer>
+			</div>
+		</Providers>
+		</body>
 		</html>
-);
+	);
 }

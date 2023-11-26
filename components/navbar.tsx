@@ -8,7 +8,6 @@ import NextLink from "next/link";
 import { ThemeSwitch } from "@/components/theme-switch";
 
 import { Logo } from "@/components/icons";
-import {Button} from "@nextui-org/button";
 
 export const Navbar = () => {
 
