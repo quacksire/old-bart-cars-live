@@ -14,6 +14,20 @@ import {
 import {Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@nextui-org/table";
 import {Snippet} from "@nextui-org/snippet";
 
+type StopTime = {
+    departure: {
+        delay: number;
+        time: string;
+    };
+    stopId: string;
+    stopSequence: number;
+};
+type Train = {
+    stopTimeUpdate: StopTime[];
+    trip: { tripId: number };
+    delayed?: boolean;
+};
+
 export default function TrainList() {
     const [timings, setTimings] = useState([])
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -25,7 +39,7 @@ export default function TrainList() {
             })
             let parsedTimes = await times.json()
 
-            parsedTimes = parsedTimes.filter((train) => {
+            parsedTimes = parsedTimes.filter((train: { trip: { tripId: string}, vehicle: {label: string}}) => {
                 if ((String(train.trip.tripId).length > 5) && train.vehicle.label == "2-door") return true
                 return false
             })
@@ -64,7 +78,7 @@ export default function TrainList() {
 
     return (
         <div className={'grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1'}>
-            {timings.map((train) => {
+            {timings.map((train: Train) => {
                 // @ts-ignore
 
                 console.log(train)
@@ -156,7 +170,11 @@ export default function TrainList() {
                                                     <TableColumn>Station</TableColumn>
                                                 </TableHeader>
                                                 <TableBody>
-                                                    {train.stopTimeUpdate.map((stopTime) => {
+                                                    {train.stopTimeUpdate.map((stopTime: {
+                                                        departure: { delay: number; time: string; };
+                                                        stopId: string;
+                                                        stopSequence: number;
+                                                    }) => {
                                                         let delayed = false
                                                         if (stopTime.departure.delay > 0) {
                                                             // @ts-ignore
