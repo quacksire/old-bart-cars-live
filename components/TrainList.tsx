@@ -14,23 +14,6 @@ import {
 import {Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@nextui-org/table";
 import {Snippet} from "@nextui-org/snippet";
 
-type StopTime = {
-    departure: {
-        delay?: number;
-        time: string;
-    };
-    arrival: {
-        delay?: number;
-        time: string;
-    };
-    stopId: string;
-    stopSequence: number;
-};
-type Train = {
-    stopTimeUpdate: StopTime[];
-    trip: { tripId: number };
-    delayed?: boolean;
-};
 
 export default function TrainList() {
     const [timings, setTimings] = useState([])
@@ -82,7 +65,7 @@ export default function TrainList() {
 
     return (
         <div className={'grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1'}>
-            {timings.map((train: Train) => {
+            {timings.map((train: any) => {
                 // @ts-ignore
 
                 console.log(train)
@@ -174,11 +157,7 @@ export default function TrainList() {
                                                     <TableColumn>Station</TableColumn>
                                                 </TableHeader>
                                                 <TableBody>
-                                                    {train.stopTimeUpdate.map((stopTime: {
-                                                        departure: { delay: number; time: string; };
-                                                        stopId: string;
-                                                        stopSequence: number;
-                                                    }) => {
+                                                    {train.stopTimeUpdate.map((stopTime: any) => {
                                                         let delayed = false
                                                         if (stopTime.departure.delay > 0) {
                                                             // @ts-ignore
