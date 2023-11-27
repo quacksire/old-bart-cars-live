@@ -54,7 +54,7 @@ export let bartStationIDs = {
 
     // Including new stations
     'warm': 'Warm Springs/South Fremont',
-    'milp': 'Milpitas',
+    'mlpt': 'Milpitas',
     'bery': 'Berryessa/North San Jose',
 }
 

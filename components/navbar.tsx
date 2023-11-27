@@ -2,12 +2,13 @@ import {
 	Navbar as NextUINavbar,
 	NavbarContent,
 	NavbarBrand,
+	NavbarItem,
 } from "@nextui-org/navbar";
 import NextLink from "next/link";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 
-import { Logo } from "@/components/icons";
+import {GithubIcon, HeartFilledIcon, Logo} from "@/components/icons";
 
 export const Navbar = () => {
 

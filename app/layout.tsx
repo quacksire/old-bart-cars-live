@@ -47,6 +47,17 @@ export const metadata: Metadata = {
 		"ride old bart",
 		"ride legacy bart",
 		"ride legacy bart trains",
+		"old bart train tracker",
+		"old bart tracker",
+		"legacy bart tracker",
+		"legacy bart train tracker",
+		"old bart train live",
+		"old bart live",
+		"legacy bart live",
+		"legacy bart train live",
+		"ride legacy bart cars",
+		"ride legacy bart trains",
+		"ride legacy bart",
 		"where are the legacy bart trains",
 		"where are they running",
 		"where are the legacy bart trains running",
@@ -129,7 +140,7 @@ export default function RootLayout({
 					{children}
 				</main>
 				{/* I want two links to be one above the other enough but spaced a lil so they don't overlap */}
-				<footer className="bottom-0 w-screen text-center m-5 text-default-500">
+				<footer className="bottom-0 text-center m-5 text-default-500">
 					{"Made with ❤️ by "}
 					<Link
 						href={"https://quacksire.dev"}

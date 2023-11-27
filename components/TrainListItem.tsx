@@ -1,3 +1,4 @@
+'use client'
 import { TableRow, Table, TableBody, TableHeader, TableCell, TableColumn } from "@nextui-org/table"
 import { Card, CardBody, CardFooter } from "@nextui-org/card"
 import { Modal, ModalContent, ModalHeader, ModalBody, useDisclosure } from "@nextui-org/modal"
@@ -7,6 +8,7 @@ import moment from "moment"
 import CountdownArrival from "@/components/CountdownArrival"
 
 export default function TrainListItem({ train }: { train: any  }) {
+
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     console.log(train)
 
@@ -44,12 +46,30 @@ export default function TrainListItem({ train }: { train: any  }) {
     }
 
     // @ts-ignore
-    let lastStop = bartStationIDs[String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId).toLowerCase()]
+    let lastStop;
+
+
+    if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "BALB") {
+        lastStop = "Daly City"
+    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "DELN") {
+        lastStop = "Richmond"
+    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "WDUB") {
+        lastStop = "Dublin/Pleasanton"
+    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "MLPT") {
+        lastStop = "Berryessa/North San Jose"
+    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "SFIA") {
+        lastStop = "Millbrae"
+    } else {
+        // @ts-ignore
+        lastStop = bartStationIDs[String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId).toLowerCase()]
+    }
+
+    console.log(lastStop)
 
     return (
         <>
             {/*@ts-ignore*/}
-            <Card className="w-[300px] m-3 mr-3 rounded-xl " isPressable isHoverable key={train.trip.tripId} onPress={onOpen}>
+            <Card className="w-[300px] m-3 mr-3 rounded-xl " isPressable isHoverable key={train.trip.tripId} onPress={onOpen} shadow={"md"}>
                 <CardBody className="flex gap-3">
                     <div className="flex flex-col">
                         {/*@ts-ignore*/}
@@ -76,7 +96,7 @@ export default function TrainListItem({ train }: { train: any  }) {
                     {lastStop && (
                         <>
                             {/*@ts-ignore*/}
-                            Going to {bartStationIDs[String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId).toLowerCase()]}
+                            Going to {lastStop}
                         </>
                     )}
 
