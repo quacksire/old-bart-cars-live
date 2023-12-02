@@ -49,19 +49,37 @@ export default function TrainListItem({ train }: { train: any  }) {
     let lastStop;
 
 
-    if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "BALB") {
-        lastStop = "Daly City"
-    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "DELN") {
-        lastStop = "Richmond"
-    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "WDUB") {
-        lastStop = "Dublin/Pleasanton"
-    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "MLPT") {
-        lastStop = "Berryessa/North San Jose"
-    } else if (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId) === "SFIA") {
-        lastStop = "Millbrae"
-    } else {
-        // @ts-ignore
-        lastStop = bartStationIDs[String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId).toLowerCase()]
+    switch (String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId)) {
+        case "BALB":
+            lastStop = "Daly City"
+            break;
+        case "DELN":
+            lastStop = "Richmond"
+            break;
+        case "WDUB":
+            lastStop = "Dublin/Pleasanton"
+            break;
+        case "MLPT":
+            lastStop = "Berryessa/North San Jose"
+            break;
+        case "SFIA":
+            lastStop = "Millbrae"
+            break;
+
+        // Due to Glen Park <-> Colma being closed 12/2/23 - 12/3/23
+        case "EMBR":
+            lastStop = "Montgomery St"
+            break;
+        case "SSAN":
+            lastStop = "Colma"
+            break;
+
+
+        default:
+            // @ts-ignore
+            lastStop = bartStationIDs[String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId).toLowerCase()]
+            break;
+
     }
 
     console.log(lastStop)
