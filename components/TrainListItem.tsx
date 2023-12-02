@@ -70,11 +70,12 @@ export default function TrainListItem({ train }: { train: any  }) {
         case "EMBR":
             lastStop = "Montgomery St"
             break;
-        case "SSAN":
-            lastStop = "Colma"
+        case "COLM":
+            lastStop = "Daly City"
             break;
-
-
+        case "16th":
+            lastStop = "24th/Mission"
+            break;
         default:
             // @ts-ignore
             lastStop = bartStationIDs[String(train.stopTimeUpdate[train.stopTimeUpdate.length - 1].stopId).toLowerCase()]
