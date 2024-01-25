@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 let title = "Old Bart Cars Live",
 	description = "Track all legacy BART cars supposedly still in service after their retirement."
@@ -172,6 +173,8 @@ export default function RootLayout({
 			</div>
 		</Providers>
 		</body>
+		<GoogleAnalytics gaId={"G-W42X0P8S0Y"} />
+
 		</html>
 	);
 }
