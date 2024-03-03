@@ -6,6 +6,8 @@ import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Toaster } from '@/components/ui/toaster'
+import {La_Belle_Aurore} from "next/dist/compiled/@next/font/dist/google";
 
 let title = "Old Bart Cars Live",
 	description = "Track all legacy BART cars supposedly still in service after their retirement."
@@ -167,13 +169,16 @@ export default function RootLayout({
 						size="sm"
 						className={'m-2 text-default-500'}
 					>
-						Support
+						Buy me a coffee ☕
 					</Link>
 				</footer>
 			</div>
+			<Toaster richColors  />
 		</Providers>
+
 		</body>
 		<GoogleAnalytics gaId={"G-W42X0P8S0Y"} />
+
 
 		</html>
 	);

@@ -65,6 +65,9 @@ export default function TrainListItem({ train }: { train: any  }) {
         case "SFIA":
             lastStop = "Millbrae"
             break;
+        case "SBRN":
+            lastStop = "SFO"
+            break;
 
         // Due to Glen Park <-> Colma being closed 12/2/23 - 12/3/23
         case "EMBR":

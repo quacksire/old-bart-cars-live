@@ -2,6 +2,8 @@
 import {useEffect, useState} from "react";
 import moment from "moment";
 import TrainListItem from "@/components/TrainListItem";
+import {Button} from "@nextui-org/button";
+import {toast} from "sonner";
 
 
 export default function TrainList() {
@@ -52,9 +54,16 @@ export default function TrainList() {
     //console.log(timings)
 
     return (
-        <div className={'grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1'}>
-            {/* @ts-ignore */}
-            {timings.map((train: any) => <TrainListItem train={train} key={train.trip.tripId} />)}
-        </div>
+        <>
+            <div className={'grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1'}>
+                {/* @ts-ignore */}
+                {timings.map((train: any) => <TrainListItem train={train} key={train.trip.tripId}/>)}
+            </div>
+            <Button onPress={() => {
+                toast('This app is no longer maintained. Please visit the new version at https://legacy-train-tracker.vercel.app/')
+            }}>toast</Button>
+
+        </>
+
     )
 }
