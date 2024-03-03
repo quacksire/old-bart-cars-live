@@ -14,3 +14,5 @@ This is a site to track BART's old legacy trains that are still in service. It i
 - [BART API](https://api.bart.gov/docs/overview/index.aspx)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
 - [Cloudflare Workers](https://workers.cloudflare.com/)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N74MA0U)

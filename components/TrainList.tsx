@@ -59,10 +59,6 @@ export default function TrainList() {
                 {/* @ts-ignore */}
                 {timings.map((train: any) => <TrainListItem train={train} key={train.trip.tripId}/>)}
             </div>
-            <Button onPress={() => {
-                toast('This app is no longer maintained. Please visit the new version at https://legacy-train-tracker.vercel.app/')
-            }}>toast</Button>
-
         </>
 
     )
