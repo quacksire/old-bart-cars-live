@@ -146,11 +146,11 @@ export default function RootLayout({
 				<footer className="bottom-0 text-center m-5 text-default-500">
 					{"Made with ❤️ by "}
 					<Link
-						href={"https://quacksire.dev"}
+						href={"https://twitter.com/@duckdoquack"}
 						className={'text-default-500'}
 						target="_blank"
 					>
-						Quacksire
+						@duckdoquack
 					</Link>
 					<br/>
 					<Link
